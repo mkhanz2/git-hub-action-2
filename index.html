@@ -1,0 +1,446 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DevOps Learning Roadmap</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: #09070f;
+    color: #f3edff;
+    padding: 40px 20px;
+}
+
+.container {
+    max-width: 1000px;
+    margin: auto;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 55px;
+}
+
+.tag {
+    color: #bd8aff;
+    border: 1px solid #7138a5;
+    display: inline-block;
+    padding: 8px 18px;
+    border-radius: 30px;
+    font-size: 12px;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: clamp(35px, 6vw, 60px);
+    font-weight: 800;
+    background: linear-gradient(90deg, #ffffff, #b77aff, #8137ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+header p {
+    color: #9c92ad;
+    margin-top: 15px;
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+.progress-box {
+    background: #15101e;
+    border: 1px solid #30213f;
+    border-radius: 15px;
+    padding: 22px;
+    margin-bottom: 40px;
+}
+
+.progress-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 13px;
+    font-size: 13px;
+    color: #c8b5e4;
+}
+
+.progress-bar {
+    height: 8px;
+    background: #30213f;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    width: 0%;
+    height: 100%;
+    background: linear-gradient(90deg, #8037ed, #cf8aff);
+    transition: 0.4s;
+}
+
+.section {
+    background: linear-gradient(145deg, #171020, #100c17);
+    border: 1px solid #342344;
+    border-radius: 18px;
+    padding: 28px;
+    margin-bottom: 22px;
+    transition: 0.3s;
+}
+
+.section:hover {
+    border-color: #9853e8;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 35px #8129c51c;
+}
+
+.section-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 22px;
+}
+
+.number {
+    width: 45px;
+    height: 45px;
+    background: #32194c;
+    color: #d4a8ff;
+    display: grid;
+    place-items: center;
+    border-radius: 12px;
+    font-weight: 800;
+    font-size: 18px;
+}
+
+h2 {
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+.subtitle {
+    color: #9585a9;
+    font-size: 12px;
+}
+
+.topics {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 12px;
+}
+
+.topic {
+    background: #1d1528;
+    border: 1px solid #352440;
+    padding: 15px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #d6c9e5;
+    font-size: 13px;
+    transition: 0.2s;
+}
+
+.topic:hover {
+    background: #291b3b;
+    border-color: #9551d4;
+}
+
+.topic input {
+    accent-color: #a45aff;
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.topic:has(input:checked) {
+    color: #a78bbd;
+    text-decoration: line-through;
+    opacity: 0.65;
+}
+
+footer {
+    text-align: center;
+    color: #776b86;
+    font-size: 12px;
+    margin-top: 50px;
+    line-height: 2;
+}
+
+footer span {
+    color: #b77aff;
+}
+
+@media(max-width: 600px) {
+    body { padding: 25px 12px; }
+    .section { padding: 20px 15px; }
+    .section-header { align-items: flex-start; }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<header>
+    <div class="tag">YOUR TECH JOURNEY STARTS HERE</div>
+    <h1>DEVOPS ROADMAP</h1>
+    <p>From Linux fundamentals to production-grade deployments.<br>
+    One step at a time. Build skills, not just notes.</p>
+</header>
+
+<div class="progress-box">
+    <div class="progress-info">
+        <span>YOUR LEARNING PROGRESS</span>
+        <span id="percentage">0% COMPLETED</span>
+    </div>
+    <div class="progress-bar">
+        <div class="progress-fill" id="progress"></div>
+    </div>
+</div>
+
+<!-- PHASE 1 -->
+<div class="section">
+    <div class="section-header">
+        <div class="number">01</div>
+        <div>
+            <h2>Linux & Operating Systems</h2>
+            <div class="subtitle">Build your foundation</div>
+        </div>
+    </div>
+    <div class="topics">
+        <label class="topic"><input type="checkbox"> Linux Commands</label>
+        <label class="topic"><input type="checkbox"> File Permissions</label>
+        <label class="topic"><input type="checkbox"> Users & Groups</label>
+        <label class="topic"><input type="checkbox"> Process Management</label>
+        <label class="topic"><input type="checkbox"> Networking Basics</label>
+        <label class="topic"><input type="checkbox"> Shell Scripting</label>
+    </div>
+</div>
+
+<!-- PHASE 2 -->
+<div class="section">
+    <div class="section-header">
+        <div class="number">02</div>
+        <div>
+            <h2>Git & GitHub</h2>
+            <div class="subtitle">Version control and collaboration</div>
+        </div>
+    </div>
+    <div class="topics">
+        <label class="topic"><input type="checkbox"> Git Fundamentals</label>
+        <label class="topic"><input type="checkbox"> Branching & Merging</label>
+        <label class="topic"><input type="checkbox"> GitHub Repositories</label>
+        <label class="topic"><input type="checkbox"> Pull Requests</label>
+        <label class="topic"><input type="checkbox"> Merge Conflicts</label>
+        <label class="topic"><input type="checkbox"> Git Workflows</label>
+    </div>
+</div>
+
+<!-- PHASE 3 -->
+<div class="section">
+    <div class="section-header">
+        <div class="number">03</div>
+        <div>
+            <h2>Networking & Cloud Fundamentals</h2>
+            <div class="subtitle">Understand how infrastructure communicates</div>
+        </div>
+    </div>
+    <div class="topics">
+        <label class="topic"><input type="checkbox"> IP Addressing & Subnets</label>
+        <label class="topic"><input type="checkbox"> DNS & DHCP</label>
+        <label class="topic"><input type="checkbox"> HTTP / HTTPS</label>
+        <label class="topic"><input type="checkbox"> Ports & Firewalls</label>
+        <label class="topic"><input type="checkbox"> Load Balancing</label>
+        <label class="topic"><input type="checkbox"> AWS Fundamentals</label>
+        <label class="topic"><input type="checkbox"> EC2 & IAM</label>
+        <label class="topic"><input type="checkbox"> VPC & S3</label>
+    </div>
+</div>
+
+<!-- PHASE 4 -->
+<div class="section">
+    <div class="section-header">
+        <div class="number">04</div>
+        <div>
+            <h2>Docker & Containerization</h2>
+            <div class="subtitle">Package and run applications anywhere</div>
+        </div>
+    </div>
+    <div class="topics">
+        <label class="topic"><input type="checkbox"> Docker Architecture</label>
+        <label class="topic"><input type="checkbox"> Docker Images</label>
+        <label class="topic"><input type="checkbox"> Docker Containers</label>
+        <label class="topic"><input type="checkbox"> Dockerfile</label>
+        <label class="topic"><input type="checkbox"> Docker Volumes</label>
+        <label class="topic"><input type="checkbox"> Docker Networking</label>
+        <label class="topic"><input type="checkbox"> Docker Compose</label>
+        <label class="topic"><input type="checkbox"> Multi-stage Builds</label>
+        <label class="topic"><input type="checkbox"> Docker Hub</label>
+    </div>
+</div>
+
+<!-- PHASE 5 -->
+<div class="section">
+    <div class="section-header">
+        <div class="number">05</div>
+        <div>
+            <h2>CI/CD Pipelines</h2>
+            <div class="subtitle">Automate integration, testing and delivery</div>
+        </div>
+    </div>
+    <div class="topics">
+        <label class="topic"><input type="checkbox"> CI/CD Fundamentals</label>
+        <label class="topic"><input type="checkbox"> YAML</label>
+        <label class="topic"><input type="checkbox"> GitHub Actions</label>
+        <label class="topic"><input type="checkbox"> Workflow & Jobs</label>
+        <label class="topic"><input type="checkbox"> Build & Test Stages</label>
+        <label class="topic"><input type="checkbox"> Jenkins</label>
+        <label class="topic"><input type="checkbox"> Pipeline as Code</label>
+        <label class="topic"><input type="checkbox"> Automated Deployment</label>
+    </div>
+</div>
+
+<!-- PHASE 6 -->
+<div class="section">
+    <div class="section-header">
+        <div class="number">06</div>
+        <div>
+            <h2>Kubernetes</h2>
+            <div class="subtitle">Container orchestration at scale</div>
+        </div>
+    </div>
+    <div class="topics">
+        <label class="topic"><input type="checkbox"> Kubernetes Architecture</label>
+        <label class="topic"><input type="checkbox"> Pods & Deployments</label>
+        <label class="topic"><input type="checkbox"> Services</label>
+        <label class="topic"><input type="checkbox"> ConfigMaps & Secrets</label>
+        <label class="topic"><input type="checkbox"> Namespaces</label>
+        <label class="topic"><input type="checkbox"> Persistent Volumes</label>
+        <label class="topic"><input type="checkbox"> Ingress</label>
+        <label class="topic"><input type="checkbox"> Helm</label>
+        <label class="topic"><input type="checkbox"> HPA & Scaling</label>
+    </div>
+</div>
+
+<!-- PHASE 7 -->
+<div class="section">
+    <div class="section-header">
+        <div class="number">07</div>
+        <div>
+            <h2>Infrastructure as Code</h2>
+            <div class="subtitle">Automate infrastructure provisioning</div>
+        </div>
+    </div>
+    <div class="topics">
+        <label class="topic"><input type="checkbox"> Terraform Basics</label>
+        <label class="topic"><input type="checkbox"> Providers & Resources</label>
+        <label class="topic"><input type="checkbox"> Variables & Outputs</label>
+        <label class="topic"><input type="checkbox"> State Management</label>
+        <label class="topic"><input type="checkbox"> Modules</label>
+        <label class="topic"><input type="checkbox"> Ansible</label>
+    </div>
+</div>
+
+<!-- PHASE 8 -->
+<div class="section">
+    <div class="section-header">
+        <div class="number">08</div>
+        <div>
+            <h2>Monitoring & Observability</h2>
+            <div class="subtitle">Know what is happening in production</div>
+        </div>
+    </div>
+    <div class="topics">
+        <label class="topic"><input type="checkbox"> Prometheus</label>
+        <label class="topic"><input type="checkbox"> Grafana</label>
+        <label class="topic"><input type="checkbox"> Metrics & Logs</label>
+        <label class="topic"><input type="checkbox"> Alerting</label>
+        <label class="topic"><input type="checkbox"> ELK Stack</label>
+        <label class="topic"><input type="checkbox"> Troubleshooting</label>
+    </div>
+</div>
+
+<!-- PHASE 9 -->
+<div class="section">
+    <div class="section-header">
+        <div class="number">09</div>
+        <div>
+            <h2>DevSecOps & Advanced Deployment</h2>
+            <div class="subtitle">Secure and deploy production applications</div>
+        </div>
+    </div>
+    <div class="topics">
+        <label class="topic"><input type="checkbox"> Security Fundamentals</label>
+        <label class="topic"><input type="checkbox"> SonarQube</label>
+        <label class="topic"><input type="checkbox"> Trivy</label>
+        <label class="topic"><input type="checkbox"> Secrets Management</label>
+        <label class="topic"><input type="checkbox"> Blue-Green Deployment</label>
+        <label class="topic"><input type="checkbox"> Canary Deployment</label>
+        <label class="topic"><input type="checkbox"> Rollbacks</label>
+    </div>
+</div>
+
+<!-- PHASE 10 -->
+<div class="section">
+    <div class="section-header">
+        <div class="number">10</div>
+        <div>
+            <h2>Real-World Projects</h2>
+            <div class="subtitle">Turn your knowledge into experience</div>
+        </div>
+    </div>
+    <div class="topics">
+        <label class="topic"><input type="checkbox"> Dockerize a Full Stack App</label>
+        <label class="topic"><input type="checkbox"> CI/CD with GitHub Actions</label>
+        <label class="topic"><input type="checkbox"> Push Images to Docker Hub</label>
+        <label class="topic"><input type="checkbox"> Deploy on AWS EC2</label>
+        <label class="topic"><input type="checkbox"> Kubernetes Deployment</label>
+        <label class="topic"><input type="checkbox"> Terraform AWS Infrastructure</label>
+        <label class="topic"><input type="checkbox"> Monitoring Production Apps</label>
+        <label class="topic"><input type="checkbox"> Complete DevSecOps Pipeline</label>
+    </div>
+</div>
+
+<footer>
+    <p>THE ROAD TO BECOMING A <span>DEVOPS ENGINEER</span></p>
+    <p>Learn → Practice → Break Things → Troubleshoot → Repeat.</p>
+</footer>
+
+</div>
+
+<script>
+const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+const progress = document.getElementById('progress');
+const percentage = document.getElementById('percentage');
+
+function updateProgress() {
+    const completed = document.querySelectorAll('input[type="checkbox"]:checked').length;
+    const total = checkboxes.length;
+    const percent = Math.round((completed / total) * 100);
+
+    progress.style.width = percent + '%';
+    percentage.textContent = percent + '% COMPLETED';
+}
+
+checkboxes.forEach(box => {
+    box.addEventListener('change', updateProgress);
+});
+
+updateProgress();
+</script>
+
+</body>
+</html>
