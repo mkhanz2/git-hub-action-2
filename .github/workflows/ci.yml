@@ -30,6 +30,8 @@ jobs:
       - name: build and push to docker hub
         uses: docker/build-push-action@v7
         with:
+          context: .
+          file: ./Dockerfile.v1
           push: true
           tags: ${{ vars.DOCKERHUB_USERNAME }}/web-app:latest
 
