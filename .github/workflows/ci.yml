@@ -1,1 +1,38 @@
+name: CI
 
+on: 
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  Build-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout code
+        uses: actions/checkout@v7
+
+      - name: check the file
+        run: test -f index.html
+
+      - name: Install lint
+        run: npm install -g htmlhint
+        
+      - name: Lint html
+        run: htmlhint index.html
+
+      - name: setup docker [login]
+        uses: docker/login-action@v4
+        with:
+          username: ${{ vars.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+      - name: build and push to docker hub
+        uses: docker/build-push-action@v7
+        with:
+          push: true
+          tags: ${{ vars.DOCKERHUB_USERNAME }}/web-app:latest
+
+      
+
+          
